@@ -7,7 +7,7 @@ Set up RVM
 
 Install dependency gems
 
-    rvm gemset import
+    monk install
 
 Start
 
@@ -19,22 +19,6 @@ Run tests
 
 Skeleton Info
 -------------
-
-The skeleton is based on [http://github.com/monk/experimental](Monk Experimental).
-
-  * This means no more dependency on `monk-glue`, among other things.
-  * This still works with old monk installations. (pre 1.0)
-
-### Usage
-
-Creating a project from scratch? Install `monk` and add this skeleton to it.
-
-    sudo gem install monk --pre
-    monk add monkex https://github.com/sinefunc/monk-experimental.git
-
-Then create an app:
-
-    monk init my_great_app -s monkex
 
 ### ORM-less
 
