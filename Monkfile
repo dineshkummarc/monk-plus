@@ -1,0 +1,23 @@
+class Monk
+  task(:test) {
+    $:.unshift File.join(File.dirname(__FILE__), "test")
+
+    require 'cutest'
+    Cutest.run(Dir['./test/**/*_test.rb'])
+  }
+
+  task.description = "Run all tests"
+
+  task(:start) {
+    system "ruby init.rb"
+  }
+
+  task.description = "Starts the server"
+
+  task(:irb) {
+    irb = ENV['IRB_PATH'] || 'irb'
+    system "#{irb} -r./init.rb"
+  }
+
+  task.description = "Opens a console session"
+end
