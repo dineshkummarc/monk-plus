@@ -1,1 +1,14 @@
+# Use the latest versions
+rack
+haml
+ffaker
+sinatra
+sinatra-content-for
+tilt
+
+# These were the current versions as of Feb 2011:
+# rack -v1.2.1
+# sinatra -v1.1.3
+# haml -v3.0.25
+# tilt -v1.2.2
 

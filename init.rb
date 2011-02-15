@@ -1,11 +1,17 @@
 $:.unshift(*Dir["./vendor/*/lib"])
 
-require "rubygems"
-require "sinatra/base"
-require "rtopia"
-require "sinatra/content_for"
-require "jsfiles"
-require "user_agent"
+begin
+  require "rubygems"
+  require "sinatra/base"
+  require "rtopia"
+  require "sinatra/content_for"
+  require "jsfiles"
+  require "user_agent"
+rescue LoadError => e
+  $stderr.write "Error loading a gem. (#{e.message})\n"
+  $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
+  exit
+end
 
 class Main < Sinatra::Base
   set      :root, lambda { |*args| File.join(File.dirname(__FILE__), *args) }
