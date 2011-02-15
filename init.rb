@@ -8,7 +8,7 @@ begin
   require "jsfiles"
   require "user_agent"
 rescue LoadError => e
-  $stderr.write "Error loading a gem. (#{e.message})\n"
+  $stderr.write "Not all gems were able to load. (#{e.message})\n"
   $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
   exit
 end
