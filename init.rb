@@ -2,13 +2,15 @@ $:.unshift(*Dir["./vendor/*/lib"])
 
 begin
   require "rubygems"  if RUBY_VERSION < "1.9"
+  gem 'sinatra', '~> 1.1'
+  gem 'haml', '~> 3.0'
   require "sinatra/base"
   require "rtopia"
   require "sinatra/content_for"
   require "jsfiles"
   require "user_agent"
 rescue LoadError => e
-  $stderr.write "Not all gems were able to load. (#{e.message})\n"
+  $stderr.write "Not all gems were able to load. (#{e.message.strip})\n"
   $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
   exit
 end
