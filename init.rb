@@ -20,6 +20,7 @@ end
 class Main < Sinatra::Base
   set      :root, lambda { |*args| File.join(File.dirname(__FILE__), *args) }
   set      :views, root('app', 'views')
+  set      :run, lambda { __FILE__ == $0 and not running? }
 
   enable   :raise_errors, :sessions, :logging,
            :show_exceptions, :raise_errors
@@ -41,4 +42,4 @@ end
 Dir["./{lib,app/**}/*.rb"].each { |rb| require rb }
 
 Main.set :port, ENV['PORT'].to_i  unless ENV['PORT'].nil?
-Main.run!  if __FILE__ == $0
+Main.run!  if Main.run?
