@@ -46,7 +46,7 @@ with [Cutest](http://github.com/djanowski/cutest) and
 Dependencies
 ------------
 
-Monk is vendor friendly, and every library in `./vendor` is automátically
+Monk is vendor friendly, and every library in `./vendor` is automatically
 added to the load path. It also ships with a `.gems` file that can be
 imported with RVM.
 
