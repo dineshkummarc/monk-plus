@@ -2,6 +2,7 @@ $:.unshift *Dir["./vendor/*/lib"]
 
 begin
   require "rubygems"  if RUBY_VERSION < "1.9"
+  # NB: Edit .gems if you add gems here.
   gem 'sinatra', '~> 1.1'
   gem 'jsmin', '~> 1.0'
   gem 'haml', '>= 3.0'
@@ -33,7 +34,7 @@ class Main < Sinatra::Base
 
   configure :development do
     require 'pistol'
-    use Pistol, Dir["./{lib,app}/**/*.rb"] { reset! and load(__FILE__) }
+    use(Pistol, Dir["./{lib,app}/**/*.rb"]) { reset! and load(__FILE__) }
   end
 end
 
