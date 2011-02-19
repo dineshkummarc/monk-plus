@@ -57,3 +57,38 @@ Some things from the HTML5 boilerplate were roughly followed:
  * Uses AgentSniff to do browser detection. The HTML class is automatically set.
 
  * A couple of new helpers have been added.
+
+History
+-------
+
+Aside from all the things above, this skeleton also features other improvements.
+
+### Other changes from the original Monk skeletons
+
+ * Uses the unofficial Monk-shake instead of Monk.
+
+   * Uses `Monkfile` instead of `Thorfile`.
+
+ * It alerts users when gems aren't installed.
+
+ * Most gems aren't vendored anymore. You have to install them yourself.
+   (`monk install` has been greatly improved afterall!)
+
+ * Added the `monk irb` task.
+
+ * Deprecated the `monk copy_example` command.
+
+### Other changes from Monk 0.x skeletons
+
+ * Removed dependency on the `monk-glue` gem.
+
+   * The old `app_config()` has been deprecated in favor of Sinatra's
+     config system.
+
+   * [Pistol](http://github.com/monk/pistol) is used for auto-reloading.
+
+ * Removed dependency on the `dependencies` gem.
+
+   * Now uses a plain old `.gems` file instead of the `dependencies` file.
+
+ * Uses Cutest + Capybara for testing (intead of Contest + Webrat).
