@@ -8,9 +8,10 @@ sinatra -v "~> 1.1"
 jsmin -v "~> 1.0"
 haml -v ">= 3.0"
 sinatra-content-for
-ffaker
+maruku
 
 # Test dependencies
+ffaker
 cutest -v "~> 1.0"
 spawn
 capybara

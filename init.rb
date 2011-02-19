@@ -11,6 +11,7 @@ begin
   require "sinatra/content_for"
   require "jsfiles"
   require "user_agent"
+  require "maruku"
 rescue LoadError => e
   $stderr.write "Not all gems were able to load. (#{e.message.strip})\n"
   $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
