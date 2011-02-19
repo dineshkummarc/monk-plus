@@ -1,9 +1,10 @@
-$:.unshift(*Dir["./vendor/*/lib"])
+$:.unshift *Dir["./vendor/*/lib"]
 
 begin
   require "rubygems"  if RUBY_VERSION < "1.9"
   gem 'sinatra', '~> 1.1'
-  gem 'haml', '~> 3.0'
+  gem 'jsmin', '~> 1.0'
+  gem 'haml', '>= 3.0'
   require "sinatra/base"
   require "rtopia"
   require "sinatra/content_for"
