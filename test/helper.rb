@@ -2,9 +2,17 @@ ENV["RACK_ENV"] = "test"
 
 require File.expand_path("../init", File.dirname(__FILE__))
 
-require "cutest"
-require "spawn"
-require "capybara/dsl"
+begin
+  # NB: Edit .gems if you add gems here.
+  gem 'cutest', "~> 1.0"
+  require "cutest"
+  require "spawn"
+  require "capybara/dsl"
+rescue LoadError => e
+  $stderr.write "Not all gems were able to load. (#{e.message.strip})\n"
+  $stderr.write "Do `monk install` first, or install the gems in .gems yourself.\n"
+  exit
+end
 
 Ohm.connect(db: 1)
 
